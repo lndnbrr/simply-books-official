@@ -8,7 +8,7 @@ export default function AuthorCard({ authorObj }) {
     <div>
       <img className="authorImage" alt="Author Headshot" {...authorObj.image} />
       <h1 className="authorName">
-        {authorObj.first_name} {authorObj.last_name}
+        {authorObj.firstName} {authorObj.lastName}
       </h1>
       <h3 className="authorEmail">{authorObj.email}</h3>
     </div>
@@ -18,8 +18,8 @@ export default function AuthorCard({ authorObj }) {
 AuthorCard.propTypes = {
   authorObj: PropTypes.shape({
     email: PropTypes.string,
-    first_name: PropTypes.string,
-    last_name: PropTypes.bool,
+    firstName: PropTypes.string,
+    lastName: PropTypes.bool,
     image: PropTypes.string,
     favorite: PropTypes.bool,
   }),
