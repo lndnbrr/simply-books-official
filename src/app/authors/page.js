@@ -36,7 +36,8 @@ export default function AuthorPage() {
 
       <div className="d-flex flex-wrap">
         {authors.map((author) => (
-          <AuthorCard key={author.firebaseKey} authorObj={author} />
+          // remainingAuthors={showAuthors} is required because it will perform delete author functionality when the onClick event occurs, then it will remove the card without having to refresh.
+          <AuthorCard key={author.firebaseKey} authorObj={author} remainingAuthors={showAuthors} />
         ))}
       </div>
     </>
