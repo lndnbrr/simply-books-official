@@ -5,8 +5,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Badge, Button, Card } from 'react-bootstrap';
+import { deleteSingleAuthor } from '../api/authorData';
 
-export default function AuthorCard({ authorObj }) {
+export default function AuthorCard({ authorObj, remainingAuthors }) {
+  // Function that deletes the author.
+  // Uses deleteSingleAuthor API call to grab author with specific firebase key to delete.
+  // Then, calls anonymous function, which will update the DOM with the remaining authors (Anonymous function will begin working on src/app/authors/page.js, where it is passed the param of showAuthors(), also found on src/app/authors/page.js).
+  const deleteAuthor = () => {
+    deleteSingleAuthor(authorObj.firebaseKey).then(() => remainingAuthors());
+  };
+
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img className="authorImage" alt="Author Headshot" variant="top" src={authorObj.image} />
@@ -24,7 +32,10 @@ export default function AuthorCard({ authorObj }) {
           )}{' '}
           {authorObj.favorite}
         </div>
-        <Button variant="primary">Go somewhere</Button>
+        {/* Delete button component from React Bootstrap. Colored red with the variant property and runs function to delete the author in onClick property */}
+        <Button variant="danger" onClick={deleteAuthor}>
+          Delete
+        </Button>
       </Card.Body>
     </Card>
   );
@@ -37,5 +48,7 @@ AuthorCard.propTypes = {
     last_name: PropTypes.bool,
     image: PropTypes.string,
     favorite: PropTypes.bool,
+    firebaseKey: PropTypes.string,
   }),
+  remainingAuthors: PropTypes.func.isRequired,
 };
