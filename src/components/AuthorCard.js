@@ -6,14 +6,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Badge, Button, Card } from 'react-bootstrap';
 import Link from 'next/link';
-import { deleteSingleAuthor } from '../api/authorData';
+// import { deleteSingleAuthor } from '../api/authorData';
+import { deleteAuthorBooks } from '../api/mergedData';
 
 export default function AuthorCard({ authorObj, remainingAuthors }) {
   // Function that deletes the author.
   // Uses deleteSingleAuthor API call to grab author with specific firebase key to delete.
   // Then, calls anonymous function, which will update the DOM with the remaining authors (Anonymous function will begin working on src/app/authors/page.js, where it is passed the param of showAuthors(), also found on src/app/authors/page.js).
   const deleteAuthor = () => {
-    deleteSingleAuthor(authorObj.firebaseKey).then(() => remainingAuthors());
+    deleteAuthorBooks(authorObj.firebaseKey).then(() => remainingAuthors());
   };
 
   return (
