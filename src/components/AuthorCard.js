@@ -34,6 +34,9 @@ export default function AuthorCard({ authorObj, remainingAuthors }) {
           {authorObj.favorite}
         </div>
 
+        <Link href={`/author/${authorObj.firebaseKey}`} passHref>
+          <Button type="button">View</Button>
+        </Link>
         {/* Button component from React Bootstrap. Uses href to navigate the user to the edit author form. Uses passHref ensures that the route directing is being applied to the Link's children, in this case it's the button. So the button functions like a navigationn link. Lastly, colored yellow with the variant property. */}
         <Link href={`/author/edit/${authorObj.firebaseKey}`} passHref>
           <Button variant="warning">Edit</Button>
