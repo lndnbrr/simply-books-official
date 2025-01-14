@@ -5,6 +5,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Badge, Button, Card } from 'react-bootstrap';
+import Link from 'next/link';
 import { deleteSingleAuthor } from '../api/authorData';
 
 export default function AuthorCard({ authorObj, remainingAuthors }) {
@@ -32,7 +33,12 @@ export default function AuthorCard({ authorObj, remainingAuthors }) {
           )}{' '}
           {authorObj.favorite}
         </div>
-        {/* Delete button component from React Bootstrap. Colored red with the variant property and runs function to delete the author in onClick property */}
+
+        {/* Button component from React Bootstrap. Uses href to navigate the user to the edit author form. Uses passHref ensures that the route directing is being applied to the Link's children, in this case it's the button. So the button functions like a navigationn link. Lastly, colored yellow with the variant property. */}
+        <Link href={`/author/edit/${authorObj.firebaseKey}`} passHref>
+          <Button variant="warning">Edit</Button>
+        </Link>
+        {/* Button component from React Bootstrap. Colored red with the variant property and runs function to delete the author in onClick property. */}
         <Button variant="danger" onClick={deleteAuthor}>
           Delete
         </Button>
