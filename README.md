@@ -33,6 +33,5 @@ https://www.loom.com/share/c9d429731ebe45a9abbd61d0b5d632fc
 - Understanding user data that is associated with the user's google account.
 - Map array methods, in particular with recalling the syntax of the method.
 - General routing typos that cause the content to not load
-- 
 ## Credits
 Landon Borrego
