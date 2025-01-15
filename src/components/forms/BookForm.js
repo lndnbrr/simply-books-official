@@ -58,22 +58,18 @@ function BookForm({ obj = initialState }) {
     <Form onSubmit={handleSubmit} className="text-black">
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Book</h2>
 
-      {/* TITLE INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Book Title" className="mb-3">
         <Form.Control type="text" placeholder="Enter a title" name="title" value={formInput.title} onChange={handleChange} required />
       </FloatingLabel>
 
-      {/* IMAGE INPUT  */}
       <FloatingLabel controlId="floatingInput2" label="Book Image" className="mb-3">
         <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} required />
       </FloatingLabel>
 
-      {/* PRICE INPUT  */}
       <FloatingLabel controlId="floatingInput3" label="Book Price" className="mb-3">
         <Form.Control type="text" placeholder="Enter price" name="price" value={formInput.price} onChange={handleChange} required />
       </FloatingLabel>
 
-      {/* AUTHOR SELECT  */}
       <FloatingLabel controlId="floatingSelect" label="Author">
         <Form.Select aria-label="Author" name="author_id" onChange={handleChange} className="mb-3" value={formInput.author_id || ''} required>
           <option value="">Select an Author</option>
@@ -85,12 +81,10 @@ function BookForm({ obj = initialState }) {
         </Form.Select>
       </FloatingLabel>
 
-      {/* DESCRIPTION TEXTAREA  */}
       <FloatingLabel controlId="floatingTextarea" label="Description" className="mb-3">
         <Form.Control as="textarea" placeholder="Description" style={{ height: '100px' }} name="description" value={formInput.description} onChange={handleChange} required />
       </FloatingLabel>
 
-      {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
       <Form.Check
         className="text-white mb-3"
         type="switch"
@@ -106,7 +100,6 @@ function BookForm({ obj = initialState }) {
         }}
       />
 
-      {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Book</Button>
     </Form>
   );

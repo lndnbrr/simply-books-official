@@ -1,15 +1,6 @@
 import { getAuthorBooks, getSingleAuthor, deleteSingleAuthor } from './authorData';
 import { getSingleBook, deleteBook } from './bookData';
 
-// Old Almost Amazon API CALL (book details)
-// const getBookDetails = (firebaseKey) => new Promise((resolve, reject) => {
-//   getSingleBook(firebaseKey).then((bookObj) => {
-//     getSingleAuthor(bookObj.author_id)
-//       .then((authorObj) => resolve({ ...bookObj, authorObj }));
-//   }).catch(reject);
-// });
-
-// New Simply Books API call (book details)
 const viewBookDetails = (bookFirebaseKey) =>
   new Promise((resolve, reject) => {
     getSingleBook(bookFirebaseKey)
@@ -21,15 +12,6 @@ const viewBookDetails = (bookFirebaseKey) =>
       .catch((error) => reject(error));
   });
 
-// Old Almost Amazon API CALL (author details)
-// const getAuthorDetails = (firebaseKey) => new Promise((resolve, reject) => {
-//   getSingleAuthor(firebaseKey).then((authorObj) => {
-//     getAuthorBooks(authorObj.firebaseKey)
-//       .then((bookObj) => resolve({ ...authorObj, bookObj }));
-//   }).catch(reject);
-// });
-
-// New Simply Books API call (author details)
 const viewAuthorDetails = (authorFirebaseKey) =>
   new Promise((resolve, reject) => {
     Promise.all([getSingleAuthor(authorFirebaseKey), getAuthorBooks(authorFirebaseKey)])
@@ -39,18 +21,6 @@ const viewAuthorDetails = (authorFirebaseKey) =>
       .catch((error) => reject(error));
   });
 
-// Old Almost Amazon API CALL (delete author books relationship)
-// const deleteAuthorBooksRelationship = (firebaseKey) => new Promise((resolve, reject) => {
-//   getAuthorBooks(firebaseKey).then((authorBooksArray) => {
-//     const deleteBookPromises = authorBooksArray.map((book) => deleteBook(book.firebaseKey));
-
-//     Promise.all(deleteBookPromises).then(() => {
-//       deleteSingleAuthor(firebaseKey).then(resolve);
-//     });
-//   }).catch(reject);
-// });
-
-// New Simply Books API call (delete author books relationship)
 const deleteAuthorBooks = (authorId) =>
   new Promise((resolve, reject) => {
     getAuthorBooks(authorId)

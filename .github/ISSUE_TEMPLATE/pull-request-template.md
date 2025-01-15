@@ -1,15 +1,3 @@
----
-name: Pull Request Template
-about: Describe this contents of this pull request.
-title: ''
-labels: ''
-assignees: ''
-
----
-
-<!--- Provide a general summary of your changes in the Title above -->
-<!--- DELETE ALL COMMENTS BEFORE CREATING PULL REQUEST -->
-
 ## Description
 <!--- Describe your changes in detail -->
 
