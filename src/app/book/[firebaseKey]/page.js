@@ -7,10 +7,8 @@ import PropTypes from 'prop-types';
 export default function ViewBook({ params }) {
   const [bookDetails, setBookDetails] = useState({});
 
-  // grab firebaseKey from url
   const { firebaseKey } = params;
 
-  // make call to API layer to get the data
   useEffect(() => {
     viewBookDetails(firebaseKey).then(setBookDetails);
   }, [firebaseKey]);

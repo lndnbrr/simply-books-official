@@ -1,12 +1,3 @@
----
-name: Issue Template
-about: Describe the issue that we are looking to solve.
-title: ''
-labels: ''
-assignees: ''
-
----
-
 # Description 
 <!--- Provide a general summary of the issue in the Title above -->
 <!--- DELETE ALL COMMENTS BEFORE CREATING ISSUE -->

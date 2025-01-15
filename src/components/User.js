@@ -24,12 +24,3 @@ User.propTypes = {
     image: PropTypes.string,
   }),
 };
-
-// User.defaultProps = {
-//   user: {
-//     image: 'https://thumbs.wbm.im/pw/small/6dc1cb1116b972bb2405441d4d590cd2.jpg',
-//     name: 'Thomas D.',
-//     email: 'tman@gmail.com',
-//     lastlogin: '20 min ago',
-//   },
-// };

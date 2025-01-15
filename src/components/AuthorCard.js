@@ -10,9 +10,6 @@ import Link from 'next/link';
 import { deleteAuthorBooks } from '../api/mergedData';
 
 export default function AuthorCard({ authorObj, remainingAuthors }) {
-  // Function that deletes the author.
-  // Uses deleteAuthorBooks API call to grab author's books with specific author id attachd to it, then runs a promise function to map all books by that author and deleting each book(by deleting each book's firebaseKey aka the obj itself), followed by deleting that author.
-  // Then, calls anonymous function, which will update the DOM with the remaining authors (Anonymous function will begin working on src/app/authors/page.js, where it is passed the param of showAuthors(), also found on src/app/authors/page.js).
   const deleteAuthor = () => {
     deleteAuthorBooks(authorObj.firebaseKey).then(() => remainingAuthors());
   };
@@ -38,11 +35,9 @@ export default function AuthorCard({ authorObj, remainingAuthors }) {
         <Link href={`/author/${authorObj.firebaseKey}`} passHref>
           <Button type="button">View</Button>
         </Link>
-        {/* Button component from React Bootstrap. Uses href to navigate the user to the edit author form. Uses passHref ensures that the route directing is being applied to the Link's children, in this case it's the button. So the button functions like a navigationn link. Lastly, colored yellow with the variant property. */}
         <Link href={`/author/edit/${authorObj.firebaseKey}`} passHref>
           <Button variant="warning">Edit</Button>
         </Link>
-        {/* Button component from React Bootstrap. Colored red with the variant property and runs function to delete the author in onClick property. */}
         <Button variant="danger" onClick={deleteAuthor}>
           Delete
         </Button>

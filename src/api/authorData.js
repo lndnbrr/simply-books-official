@@ -1,10 +1,7 @@
 import { clientCredentials } from '../utils/client';
-// API CALLS FOR AUTHORS
 
 const endpoint = clientCredentials.databaseURL;
 
-// GET ALL AUTHORS
-// Same API call in Almost Amazon
 const getAuthors = (uid) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/authors.json?orderBy="uid"&equalTo="${uid}"`, {
@@ -24,8 +21,6 @@ const getAuthors = (uid) =>
       .catch(reject);
   });
 
-// CREATE AN AUTHOR
-// API CALL TO CREATE AUTHOR (Transferred from Almost Amazon)
 const createAuthor = (payload) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/authors.json`, {
@@ -40,8 +35,6 @@ const createAuthor = (payload) =>
       .catch(reject);
   });
 
-// GET A SINGLE AUTHOR
-// Same API call in Almost Amazon
 const getSingleAuthor = (firebaseKey) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/authors/${firebaseKey}.json`, {
@@ -55,8 +48,6 @@ const getSingleAuthor = (firebaseKey) =>
       .catch(reject);
   });
 
-// DELETE AN AUTHOR
-// Same API call in Almost Amazon
 const deleteSingleAuthor = (firebaseKey) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/authors/${firebaseKey}.json`, {
@@ -70,8 +61,6 @@ const deleteSingleAuthor = (firebaseKey) =>
       .catch(reject);
   });
 
-// UPDATE AN AUTHOR
-// API CALL TO UPDATE AUTHOR (Transferred from Almost Amazon)
 const updateAuthor = (payload) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/authors/${payload.firebaseKey}.json`, {
@@ -86,8 +75,6 @@ const updateAuthor = (payload) =>
       .catch(reject);
   });
 
-// GET A SINGLE AUTHOR'S BOOKS
-// API CALL TO GET A SINGLE AUTHOR'S BOOKS (Transferred from Almost Amazon)
 const getAuthorBooks = (firebaseKey) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/books.json?orderBy="author_id"&equalTo="${firebaseKey}"`, {
@@ -101,8 +88,6 @@ const getAuthorBooks = (firebaseKey) =>
       .catch(reject);
   });
 
-// GET ALL AUTHORS WITH FAVORITE STATUS
-// Same API call in Almost Amazon
 const favoriteAuthors = (uid) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/authors.json?orderBy="uid"&equalTo="${uid}"`, {
