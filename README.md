@@ -5,15 +5,15 @@ The contents of this `README.md` file gives a breakdown on how to maneuver throu
 https://lb-simply-books.netlify.app/
 
 ## Table of Contents
-- Purpose (what is it and why we used React)
-- Features
-- How To Use
-- Project Board and ERD links
-- Challenges met
-- Credits
+- [Purpose](https://github.com/lndnbrr/simply-books-official/blob/main/README.md#purpose)
+- [Features](https://github.com/lndnbrr/simply-books-official/blob/main/README.md#features)
+- [How To Use](https://github.com/lndnbrr/simply-books-official/blob/main/README.md#how-to-use)
+- [Project Board and ERD links](https://github.com/lndnbrr/simply-books-official/blob/main/README.md#project-board-and-erd-links)
+- [Challenges met](https://github.com/lndnbrr/simply-books-official/blob/main/README.md#challenges-met)
+- [Credits](https://github.com/lndnbrr/simply-books-official/blob/main/README.md#credits)
 
 ## Purpose
-This application caters to users who want to keep track of their books and the authors who published those books. The library that was used to create this application is React, a JavaScript library that makes UI components and state of selected variables more efficient. The framework that was also used to create this application is Next.JS, a framework built, improving React to perform additional tasks like _routing_ and _data fetching_.
+This application caters to users who want to keep track of their books and the authors who published those books. The library that was used to create this application is React, a JavaScript library that makes UI components and the state of selected variables more efficient. The framework that was also used to create this application is Next.JS, a framework built, to improve React to perform additional tasks like _routing_ and _data fetching_.
 
 ## Features
 - The User can perform **CRUD** on both the Authors and Books.
